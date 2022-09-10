@@ -4,7 +4,8 @@
   "info": {
     "singularName": "slider",
     "pluralName": "sliders",
-    "displayName": "Sliders"
+    "displayName": "Sliders",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -32,18 +33,38 @@
       "type": "richtext"
     },
     "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
       "allowedTypes": [
         "images",
         "videos"
       ],
-      "type": "media",
-      "multiple": false,
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
+      }
+    },
+    "event": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::country.country",
+      "inversedBy": "sliders"
+    },
+    "movie": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::movie.movie",
+      "inversedBy": "sliders"
+    },
+    "url_external": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
       },
-      "required": true
+      "type": "string"
     }
   }
 }

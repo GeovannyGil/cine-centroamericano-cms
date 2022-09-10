@@ -110,7 +110,7 @@
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::country.country",
-      "inversedBy": "movies"
+      "mappedBy": "movies"
     },
     "movie_uid": {
       "pluginOptions": {
@@ -121,6 +121,12 @@
       "type": "uid",
       "targetField": "title",
       "required": true
+    },
+    "sliders": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::slider.slider",
+      "mappedBy": "movie"
     }
   }
 }

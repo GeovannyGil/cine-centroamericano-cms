@@ -4,7 +4,8 @@
   "info": {
     "singularName": "country",
     "pluralName": "countries",
-    "displayName": "Países"
+    "displayName": "Eventos",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -26,32 +27,32 @@
       "required": true
     },
     "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
       "allowedTypes": [
         "images",
         "videos"
       ],
-      "type": "media",
-      "multiple": false,
       "pluginOptions": {
         "i18n": {
           "localized": false
         }
-      },
-      "required": true
+      }
     },
     "banner": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
       "allowedTypes": [
         "images",
         "videos"
       ],
-      "type": "media",
-      "multiple": false,
       "pluginOptions": {
         "i18n": {
           "localized": false
         }
-      },
-      "required": true
+      }
     },
     "title": {
       "pluginOptions": {
@@ -69,7 +70,7 @@
       },
       "type": "richtext"
     },
-    "country_uid": {
+    "event_uid": {
       "pluginOptions": {
         "i18n": {
           "localized": true
@@ -84,6 +85,12 @@
       "relation": "manyToMany",
       "target": "api::movie.movie",
       "inversedBy": "countries"
+    },
+    "sliders": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::slider.slider",
+      "mappedBy": "event"
     }
   }
 }
